@@ -5,18 +5,23 @@
   
 
   
-  <title>Hello World | 233Mobile</title>
+  <title>233网校iOS客户端采用viper进行重构 | 233Mobile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="写在前面1设计模式没有优劣，只有哪种更合适；过度的优化是万恶之源；技术是为服务于业务，业务驱动技术的不断优化与进步。 背景233网校APP客户端从14年开始，到现在已经快将近四个年头。随着版本的不断迭代，业务的不断膨胀，造成核心某块的代码核心逻辑不够突出，冗余代码过多，耦合性严重。由于采用的MVC，controller承担的东西过多，导致代码量膨胀到一个不可接受的地步。以题库做题核心功能contr">
+<meta name="keywords" content="iOS,viper,重构,233网校">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
+<meta property="og:title" content="233网校iOS客户端采用viper进行重构">
 <meta property="og:url" content="http://yoursite.com/2018/02/02/hello-world/index.html">
 <meta property="og:site_name" content="233Mobile">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2018-02-02T08:55:03.080Z">
+<meta property="og:description" content="写在前面1设计模式没有优劣，只有哪种更合适；过度的优化是万恶之源；技术是为服务于业务，业务驱动技术的不断优化与进步。 背景233网校APP客户端从14年开始，到现在已经快将近四个年头。随着版本的不断迭代，业务的不断膨胀，造成核心某块的代码核心逻辑不够突出，冗余代码过多，耦合性严重。由于采用的MVC，controller承担的东西过多，导致代码量膨胀到一个不可接受的地步。以题库做题核心功能contr">
+<meta property="og:image" content="http://192.168.1.9/showdoc/Public/Uploads/2018-04-12/5aced51735906.png">
+<meta property="og:image" content="http://192.168.1.9/showdoc/Public/Uploads/2018-04-12/5acefdf1c4805.png">
+<meta property="og:image" content="http://192.168.1.9/showdoc/Public/Uploads/2018-04-12/5acef88107d96.png">
+<meta property="og:updated_time" content="2018-04-12T07:24:02.534Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="233网校iOS客户端采用viper进行重构">
+<meta name="twitter:description" content="写在前面1设计模式没有优劣，只有哪种更合适；过度的优化是万恶之源；技术是为服务于业务，业务驱动技术的不断优化与进步。 背景233网校APP客户端从14年开始，到现在已经快将近四个年头。随着版本的不断迭代，业务的不断膨胀，造成核心某块的代码核心逻辑不够突出，冗余代码过多，耦合性严重。由于采用的MVC，controller承担的东西过多，导致代码量膨胀到一个不可接受的地步。以题库做题核心功能contr">
+<meta name="twitter:image" content="http://192.168.1.9/showdoc/Public/Uploads/2018-04-12/5aced51735906.png">
   
     <link rel="alternate" href="/atom.xml" title="233Mobile" type="application/atom+xml">
   
@@ -54,7 +59,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -77,7 +82,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      233网校iOS客户端采用viper进行重构
     </h1>
   
 
@@ -85,22 +90,41 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p><strong><em>写在前面</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">设计模式没有优劣，只有哪种更合适；过度的优化是万恶之源；技术是为服务于业务，业务驱动技术的不断优化与进步。</span><br></pre></td></tr></table></figure></p>
+<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>233网校APP客户端从14年开始，到现在已经快将近四个年头。随着版本的不断迭代，业务的不断膨胀，造成核心某块的代码核心逻辑不够突出，冗余代码过多，耦合性严重。由于采用的MVC，controller承担的东西过多，导致代码量膨胀到一个不可接受的地步。以题库做题核心功能controller，代码量已经积累到将近四千行，核心业务逻辑与弱业务逻辑交织在一起，想测试和拓展都非常的困难。如下图：<br><img src="http://192.168.1.9/showdoc/Public/Uploads/2018-04-12/5aced51735906.png" alt=""></p>
+<h1 id="重构之后达到怎样的效果"><a href="#重构之后达到怎样的效果" class="headerlink" title="重构之后达到怎样的效果"></a>重构之后达到怎样的效果</h1><ul>
+<li>controller只保持核心的业务逻辑和基本初始化工作</li>
+<li>增强可拓展性</li>
+<li>保持稳定性和业务的完整性</li>
+<li>降低bug发生的概率，增强可测试性<h1 id="方案选型"><a href="#方案选型" class="headerlink" title="方案选型"></a>方案选型</h1>首先先简单的了解下 <code>VIPER</code>,这里只做简单的解释：<br><img src="http://192.168.1.9/showdoc/Public/Uploads/2018-04-12/5acefdf1c4805.png" alt=""></li>
+<li>交互器 — 包括关于数据和网络请求的业务逻辑，例如创建一个实体（数据），或者从服务器中获取一些数据。为了实现这些功能，需要使用服务、管理器，但是他们并不被认为是<code>VIPER</code>架构内的模块，而是外部依赖。</li>
+<li>展示器 — 包含UI层面的业务逻辑以及在交互器层面的方法调用。</li>
+<li>实体 — 普通的数据对象，不属于数据访问层次，因为数据访问属于交互器的职责。</li>
+<li>路由器 — 用来连接<code>VIPER</code>的各个模块。</li>
+</ul>
+<p>至于为何选定<code>VIPER</code>来进行重构，主要有一下几点原因：</p>
+<ul>
+<li>责任划分的粒度划分更细更具体，层次更加的清晰</li>
+<li>可拓展性更加强</li>
+<li>针对性更强与现有业务更加的契合</li>
+<li>代码可读性更好，便于其他人员维护与拓展。</li>
+<li>可测试更强<h1 id="怎样解决"><a href="#怎样解决" class="headerlink" title="怎样解决"></a>怎样解决</h1><h2 id="屡清业务"><a href="#屡清业务" class="headerlink" title="屡清业务"></a>屡清业务</h2>这步非常的重要，关乎到后面的接口设计、重构后业务的完整性，和责任模块的划分。我的做法是，绘制具体的业务流程图。如下图：<br><img src="http://192.168.1.9/showdoc/Public/Uploads/2018-04-12/5acef88107d96.png" alt=""><br>将所有的界面跳转归为一类，将所有的数据处理和数据请求归为一类，并且注明数据的流向和事件回调，方便接下来的责任模块划分。<h2 id="责任模块的创建与相关协议的定制"><a href="#责任模块的创建与相关协议的定制" class="headerlink" title="责任模块的创建与相关协议的定制"></a>责任模块的创建与相关协议的定制</h2>首先需要说明下，这里的回调采用的block和代理两种方式。其中针对于路由跳转到各类答题卡、各种结果页与控制器间采用的代理，因为这部分功能逻辑交互性更强，答题卡之间和结果页之间相同地方多，代理能让代码的可读性更强。而控制器与交互器之前回调的方式采用的block，主要这部分主要是网络请求后返回的处理结果，非常的简单，使用代理代价太大，会大大增加代码量。</li>
+</ul>
+<p><strong>控制器</strong>  </p>
+<p>当做<code>VIPER</code>中的<code>presenter</code>，我个人偏向的理解这部分主要的职责调度各模块，处理回调结果，所以这里叫控制器。所有的核心逻辑都在这里，另外还承担了交互器的初始化、界面初始化和接收用户事件、路由调度、接收其他某块的回调、发起各类请求和处理请求返回结果。<br><strong>交互器</strong><br>网络请求、加工数据，回调给处理后的结果给控制器。交互器对外部分的接口代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">向服务器提交保存答案</span><br><span class="line">@param exameQuest 试题</span><br><span class="line">@param isForceSave 是否强制保存答案</span><br><span class="line">*/</span><br><span class="line">- (void)saveExameQuestInfoWithExamQuest:(EExameQuest *)exameQuest isForceSave:(BOOL)isForceSave;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">清除答案缓存字典</span><br><span class="line">*/</span><br><span class="line">- (void)clearAnswerFromDic;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">保存答案到数据库</span><br><span class="line">@param isSaveToHttp 是否已经保存网络</span><br><span class="line">*/</span><br><span class="line">- (void)saveAnswerToDBIsSaveToHttp:(BOOL)isSaveToHttp;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">退出做题页前保存相关数据</span><br><span class="line">@param completion 完成后回调</span><br><span class="line">*/</span><br><span class="line">- (void)postDataToServerBeforePoPWithComplete:(void (^)(BOOL isSuccess))completion;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">通过md5重新抽题重做(未进行交卷)</span><br><span class="line">@param completeBlock 回调</span><br><span class="line">*/</span><br><span class="line">- (void)redoFromMd5WithComplete:(void (^)(NSString *msg,BOOL isSuccess))completeBlock;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">根据index获取当前试题数据模型</span><br><span class="line">@param index 位置</span><br><span class="line">@param requestFinshBlock 请求后回调（作为是否需要请求接口的判断依据 为nil时不会请求接口）</span><br><span class="line">@return 试题数据模型</span><br><span class="line">*/</span><br><span class="line">- (EExameQuest *)newExamQuestListAtIndex:(NSInteger)index requestFinshBlock:(void(^)())requestFinshBlock;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">添加试题收藏</span><br><span class="line">@param examQuest 试题数据模型</span><br><span class="line">@param complete 回调</span><br><span class="line">*/</span><br><span class="line">- (void)addExamQuestFavWithExamQuest:(EExameQuest *)examQuest complete:(void (^)(NSString *msg,BOOL isFirst,BOOL isSuccess))complete;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">取消试题收藏</span><br><span class="line">@param examQuest 试题数据模型</span><br><span class="line">@param complete 回调</span><br><span class="line">*/</span><br><span class="line">- (void)cancelExamQuestFavWithExamQuest:(EExameQuest *)examQuest complete:(void (^)(NSString *msg,BOOL isSuccess))complete;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">删除错题</span><br><span class="line">@param examQuest 错题删除</span><br><span class="line">@param complete 成功回调</span><br><span class="line">*/</span><br><span class="line">- (void)removeErrorQuestWithshowView:(UIView *)view complete:(void (^)(NSString *msg,BOOL isSuccess))complete;</span><br></pre></td></tr></table></figure></p>
+<p><strong>路由器</strong><br>以下是路由回调接口设计：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">typedef NS_ENUM(NSUInteger, TExamAnswerCardMenuSelectType) &#123;</span><br><span class="line">TExamAnswerCardMenuSelectRedo,//重做</span><br><span class="line">TExamAnswerCardMenuSelectCheckAnalysis,//检查解析</span><br><span class="line">TExamAnswerCardMenuSelectCheckFinishExam,//结束作答</span><br><span class="line">TExamAnswerCardMenuSelectNextContinue,//保存下次继续</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">typedef NS_ENUM(NSUInteger, TExamPushResultReportMenuSelectType) &#123;</span><br><span class="line">TExamPushResultReportMenuSelectDismiss,//点击返回</span><br><span class="line">TExamPushResultReportMenuSelectCheckAnalysis,//检查解析</span><br><span class="line">TExamPushResultReportMenuSelectCheckErrorQuestion,//查看错题</span><br><span class="line">TExamPushResultReportMenuSelectCheckCorrectQuestion,//查看对题</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">#pragma mark - 答题卡回调代理</span><br><span class="line">@protocol TExamAnswerCardDelegate &lt;NSObject&gt;</span><br><span class="line">@optional</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">答题卡题号点击回调</span><br><span class="line"></span><br><span class="line">@param vc 控制器</span><br><span class="line">@param index 题号坐标</span><br><span class="line">*/</span><br><span class="line">- (void)viewcontroller:(UIViewController *)vc selectIndex:(NSUInteger)index;</span><br><span class="line">- (void)viewcontroller:(UIViewController *)vc selectMenuType:(TExamAnswerCardMenuSelectType)selectType;</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">#pragma mark - 交卷报告回调代理</span><br><span class="line">@protocol TExamPushResultReportDelegate &lt;NSObject&gt;</span><br><span class="line">@optional</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">结果页题库题号点击回调</span><br><span class="line"></span><br><span class="line">@param vc 控制器</span><br><span class="line">@param index 题号坐标</span><br><span class="line">*/</span><br><span class="line">- (void)resultReport:(UIViewController *)vc selectIndex:(NSUInteger)index;</span><br><span class="line">- (void)resultReport:(UIViewController *)vc selectMenuType:(TExamPushResultReportMenuSelectType)menuType;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">再做一次</span><br><span class="line"></span><br><span class="line">@param vc 控制器</span><br><span class="line">*/</span><br><span class="line">- (void)resultReportDoAgainWithVc:(UIViewController *)vc;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">结果回调知识点做题</span><br><span class="line"></span><br><span class="line">@param vc 当前控制器</span><br><span class="line">@param config 配置</span><br><span class="line">@param examModel 试题模型</span><br><span class="line">*/</span><br><span class="line">- (void)resultReportKnowledgeDoExamWithVc:(UIViewController *)vc config:(TExameModelControllerConfig *)config examModel:(EExameModel *)examModel;</span><br></pre></td></tr></table></figure></p>
+<p>路由器类似于工具，所以设计的对方接口都是类方法，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">跳转到答题卡</span><br><span class="line"></span><br><span class="line">@param viewModel viewModel</span><br><span class="line">@param delegate 代理</span><br><span class="line">*/</span><br><span class="line">+ (void)pushAnswerCardWithInteractor:(TExamModelInteractor *)interactor delegate:(UIViewController&lt;TExamAnswerCardDelegate&gt; *)delegate;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">跳转到交卷报告</span><br><span class="line"></span><br><span class="line">@param viewModel viewModel</span><br><span class="line">@param totalTime 总时间</span><br><span class="line">@param delegate 代理</span><br><span class="line">*/</span><br><span class="line">+ (void)pushReportWithInteractor:(TExamModelInteractor *)interactor totalTime:(NSInteger)totalTime delegate:(UIViewController&lt;TExamPushResultReportDelegate&gt; *)delegate completion:(void(^)())completion;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">根据情况pop到指定的页面</span><br><span class="line"></span><br><span class="line">@param animated 是否有动画</span><br><span class="line">@param viewModel viewModel</span><br><span class="line">@param currentVc 父控制器</span><br><span class="line">*/</span><br><span class="line">+ (void)popViewControllerWithAnimated:(BOOL)animated interactor:(TExamModelInteractor *)interactor currentVC:(UIViewController *)currentVc;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">跳转到上一级页面</span><br><span class="line"></span><br><span class="line">@param viewController 父控制器</span><br><span class="line">@param animated animated </span><br><span class="line">*/</span><br><span class="line">+ (void)popViewControllerWithCurrentVC:(UIViewController *)viewController animated:(BOOL)animated;</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><strong>作者简介</strong><br>==张立，<code>233网校</code>iOS客户端负责人。2014年加入 <code>233网校</code>，负责iOS客户端管理，以及题库模块开发与维护等工作。==</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/02/hello-world/" data-id="cjdbf7fr70000tps28dtyjji3" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/02/02/hello-world/" data-id="cjfw7c6yf0000ngs2e0ul4l61" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-viper-重构-233网校/">iOS,viper,重构,233网校</a></li></ul>
+
     </footer>
   </div>
   
@@ -116,13 +140,27 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS-viper-重构-233网校/">iOS,viper,重构,233网校</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/iOS-viper-重构-233网校/" style="font-size: 10px;">iOS,viper,重构,233网校</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li></ul>
     </div>
@@ -132,12 +170,12 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2018/02/02/hello-world/">Hello World</a>
+            <a href="/2018/02/02/hello-world/">233网校iOS客户端采用viper进行重构</a>
           </li>
         
       </ul>
