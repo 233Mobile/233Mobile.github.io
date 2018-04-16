@@ -83,8 +83,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong><em> 写在前面 </em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">设计模式没有优劣，只有哪种更合适；</span><br><span class="line">过度的优化是万恶之源；</span><br><span class="line">技术服务于业务，业务驱动技术的不断优化与进步。</span><br></pre></td></tr></table></figure></p>
-<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>233网校APP客户端从14年开始，到现在已经快将近四个年头。随着版本的不断迭代，业务的不断膨胀，造成核心模块的代码核心逻辑不够突出，冗余代码过多，耦合性严重。由于采用的MVC，controller承担的东西过多，导致代码量膨胀到一个不可接受的地步。以题库做题核心功能controller，代码量已经积累到将近四千行，核心业务逻辑与弱业务逻辑交织在一起，想测试和拓展都非常的困难。如下图：<br><img src="https://upload-images.jianshu.io/upload_images/596199-0791e7e5a1da7095.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+        <p><strong><em> 写在前面 </em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">设计模式没有优劣，只有哪种更合适；</span><br><span class="line">过度的优化是万恶之源；</span><br><span class="line">技术服务于业务，业务驱动技术的发展。</span><br></pre></td></tr></table></figure></p>
+<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>233网校APP客户端从14年开始，到现在已经快将近四个年头。随着版本的不断迭代，业务的不断膨胀，造成的问题越来越多。</p>
+<ul>
+<li>强业务逻辑与弱业务逻辑交织在一起，没有实现分离</li>
+<li>相似业务很分散没有聚合在一起</li>
+<li>由于采用MVC造成核心控制器代码量过于庞大，造成阅读苦难</li>
+<li>可测试性、功能稳定性和可拓展性差。<br><img src="https://upload-images.jianshu.io/upload_images/596199-0791e7e5a1da7095.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
 <h1 id="重构之后达到怎样的效果"><a href="#重构之后达到怎样的效果" class="headerlink" title="重构之后达到怎样的效果"></a>重构之后达到怎样的效果</h1><ul>
 <li>核心业务逻辑与弱业务逻辑实现分离，</li>
 <li>增强可拓展性</li>
@@ -121,7 +127,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/12/ar/" data-id="cjg1lfrp80000cws21e7im5ws" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/04/12/ar/" data-id="cjg1mkmm70000fws2gn31ee4z" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-VIPER-重构-233网校/">iOS,VIPER,重构,233网校</a></li></ul>
