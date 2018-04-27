@@ -7,19 +7,19 @@
   
   <title>233Mobile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title:iOS客户端题库做题页重构心得tags: iOS,VIPER,重构,233网校author: mark.zhanggrammar_cjkRuby: true   写在前面 123设计模式没有优劣；过度的优化是万恶之源；技术服务于业务，业务驱动技术的发展。 背景iOS客户端从14年发布第一版到现在已经将近四个年头，功能已经越来越完善和趋于稳定。但是随着软件的不断成长，也遗留了很多的问题">
+  <meta name="description" content="title:iOS客户端题库做题页重构心得tags: iOS,VIPER,重构,233网校author: mark.zhanggrammar_cjkRuby: true   写在前面  *123设计模式没有优劣；过度的优化是万恶之源；技术服务于业务，业务驱动技术的发展。   背景iOS客户端从14年发布第一版到现在已经将近四个年头，功能已经越来越完善和趋于稳定。但是随着软件的不断成长，也遗留了很">
 <meta property="og:type" content="article">
 <meta property="og:title" content="233Mobile">
 <meta property="og:url" content="http://yoursite.com/2018/04/12/ar/index.html">
 <meta property="og:site_name" content="233Mobile">
-<meta property="og:description" content="title:iOS客户端题库做题页重构心得tags: iOS,VIPER,重构,233网校author: mark.zhanggrammar_cjkRuby: true   写在前面 123设计模式没有优劣；过度的优化是万恶之源；技术服务于业务，业务驱动技术的发展。 背景iOS客户端从14年发布第一版到现在已经将近四个年头，功能已经越来越完善和趋于稳定。但是随着软件的不断成长，也遗留了很多的问题">
+<meta property="og:description" content="title:iOS客户端题库做题页重构心得tags: iOS,VIPER,重构,233网校author: mark.zhanggrammar_cjkRuby: true   写在前面  *123设计模式没有优劣；过度的优化是万恶之源；技术服务于业务，业务驱动技术的发展。   背景iOS客户端从14年发布第一版到现在已经将近四个年头，功能已经越来越完善和趋于稳定。但是随着软件的不断成长，也遗留了很">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/596199-0791e7e5a1da7095.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/596199-02a34fc742da539b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/596199-0d350ed3dc5a5c65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-04-27T03:58:29.129Z">
+<meta property="og:updated_time" content="2018-04-27T03:59:23.793Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="233Mobile">
-<meta name="twitter:description" content="title:iOS客户端题库做题页重构心得tags: iOS,VIPER,重构,233网校author: mark.zhanggrammar_cjkRuby: true   写在前面 123设计模式没有优劣；过度的优化是万恶之源；技术服务于业务，业务驱动技术的发展。 背景iOS客户端从14年发布第一版到现在已经将近四个年头，功能已经越来越完善和趋于稳定。但是随着软件的不断成长，也遗留了很多的问题">
+<meta name="twitter:description" content="title:iOS客户端题库做题页重构心得tags: iOS,VIPER,重构,233网校author: mark.zhanggrammar_cjkRuby: true   写在前面  *123设计模式没有优劣；过度的优化是万恶之源；技术服务于业务，业务驱动技术的发展。   背景iOS客户端从14年发布第一版到现在已经将近四个年头，功能已经越来越完善和趋于稳定。但是随着软件的不断成长，也遗留了很">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/596199-0791e7e5a1da7095.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternate" href="/atom.xml" title="233Mobile" type="application/atom+xml">
@@ -82,7 +82,10 @@
         <hr>
 <p>title:iOS客户端题库做题页重构心得<br>tags: iOS,VIPER,重构,233网校<br>author: mark.zhang<br>grammar_cjkRuby: true</p>
 <hr>
-<p><strong><em> 写在前面 </em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">设计模式没有优劣；</span><br><span class="line">过度的优化是万恶之源；</span><br><span class="line">技术服务于业务，业务驱动技术的发展。</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>写在前面  *<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">设计模式没有优劣；</span><br><span class="line">过度的优化是万恶之源；</span><br><span class="line">技术服务于业务，业务驱动技术的发展。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>iOS客户端从14年发布第一版到现在已经将近四个年头，功能已经越来越完善和趋于稳定。但是随着软件的不断成长，也遗留了很多的问题。题库作为最核心的功能之一，逻辑业务也相对的复杂很多。不同的种类的做题，有些有着相似的部分，也有着很多不同的地方。譬如章节练习和错题集之间答题卡不相同，但是结束弹窗不同和结果页不同；或者有着相同的结果页和答题卡，但是抽题逻辑不同和交卷逻辑不同等等。<br>随着新的业务的增加，为了在短时间内完成修改并且降低bug率，一般会创建一个新的方法来成相应的逻辑，这样就导致很多区别不是很大的同类逻辑，被分散的写在了不同的方法中，而不是统一处理。<br>另外还有一个问题，由于初期选用的MVC，这样就导致controller中的代码量不断的膨胀，最后到几千行，这简直就是灾难性的。附上一张图，解释下：<br><img src="https://upload-images.jianshu.io/upload_images/596199-0791e7e5a1da7095.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <h1 id="重构三部曲"><a href="#重构三部曲" class="headerlink" title="重构三部曲"></a>重构三部曲</h1><h2 id="设计模式选择"><a href="#设计模式选择" class="headerlink" title="设计模式选择"></a>设计模式选择</h2><p>通过一张简单的图来了解下什么是<code>VIPER</code>:<br><img src="https://upload-images.jianshu.io/upload_images/596199-02a34fc742da539b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <ul>
@@ -114,7 +117,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/12/ar/" data-id="cjghfgbvs000096s2es8pa6u0" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/04/12/ar/" data-id="cjghfhnmp0000afs2g5ndfgvf" class="article-share-link">Teilen</a>
       
       
     </footer>
